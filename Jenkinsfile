@@ -20,11 +20,5 @@ echo \'Success!\''''
       }
     }
 
-    stage('Fluffy build') {
-      steps {
-        sh 'echo \'Another placeholder\''
-      }
-    }
-
   }
 }
