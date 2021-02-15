@@ -23,13 +23,13 @@ echo \'Success!\''''
     stage('Buzz build') {
       steps {
         sh 'echo \'Hello world\''
-        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
 
     stage('Buzz test') {
       steps {
         sh 'echo \'Hello test!\''
+        junit '**/surefire-reports/**/*.xml'
       }
     }
 
