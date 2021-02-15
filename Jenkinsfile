@@ -22,13 +22,14 @@ echo \'Success!\''''
 
     stage('Buzz build') {
       steps {
-        sh './jenkins/build.sh'
+        sh 'echo \'Hello world\''
+        archiveArtifacts(artifacts: 'target/*.jar', fingerprint: true)
       }
     }
 
     stage('Buzz test') {
       steps {
-        sh './jenkins/test-all.sh'
+        sh 'echo \'Hello test!\''
       }
     }
 
