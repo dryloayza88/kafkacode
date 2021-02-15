@@ -13,5 +13,18 @@ pipeline {
       }
     }
 
+    stage('Fluffy test') {
+      steps {
+        sh '''sleep 5
+echo \'Success!\''''
+      }
+    }
+
+    stage('Fluffy build') {
+      steps {
+        sh 'echo \'Another placeholder\''
+      }
+    }
+
   }
 }
