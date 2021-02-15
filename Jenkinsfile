@@ -22,16 +22,19 @@ echo \'Success!\''''
 
     stage('Buzz build') {
       steps {
-        sh 'echo \'Hello world\''
+        sh '''echo \'I am a ${BUZZ_NAME}\'
+echo \'Hello world\''''
       }
     }
 
     stage('Buzz test') {
       steps {
         sh 'echo \'Hello test!\''
-        junit '**/surefire-reports/**/*.xml'
       }
     }
 
+  }
+  environment {
+    BUZZ_NAME = 'Worker Bee'
   }
 }
