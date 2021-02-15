@@ -22,7 +22,7 @@ echo \'Success!\''''
 
     stage('Buzz build') {
       steps {
-        sh '''echo \'I am a ${BUZZ_NAME}\'
+        sh '''echo "I am a ${BUZZ_NAME}"
 echo \'Hello world\''''
       }
     }
