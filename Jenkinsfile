@@ -28,8 +28,20 @@ echo \'Hello world\''''
     }
 
     stage('Buzz test') {
-      steps {
-        sh 'echo \'Hello test!\''
+      parallel {
+        stage('Buzz test') {
+          steps {
+            sh 'echo \'Hello test!\''
+          }
+        }
+
+        stage('Testing B') {
+          steps {
+            sh '''sleep 10
+echo \'done.\''''
+          }
+        }
+
       }
     }
 
